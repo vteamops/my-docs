@@ -1,0 +1,14 @@
+css
+/* custom.css */
+.content {
+  overflow: auto;
+}
+body:not(.ready) {
+  overflow: auto;
+}
+
+/* If sidebar also not scrolling, add these: */
+.sidebar {
+  overflow-y: auto;
+  max-height: calc(100vh - 60px); /* Adjust based on your header height */
+}
