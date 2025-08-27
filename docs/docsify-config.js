@@ -1,6 +1,6 @@
 window.$docsify = {
-  name: '',
-  repo: '',
+  name: 'VTeamOps Docs',
+  repo: 'https://github.com/vteamops/my-docs.git',
   loadSidebar: true,
   hooks: {
     doneEach: function() {
