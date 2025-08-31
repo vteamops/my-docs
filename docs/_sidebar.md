@@ -2,3 +2,4 @@
 - [Installation](installation.md)
 - [Usage](usage.md)
 - [VMware Powercli](vmware-powershell-automation.md)
+- [VMware Final Interview](vmware-final-interview-documentation)
