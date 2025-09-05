@@ -4,15 +4,15 @@
 
 ## About Yourself
 
-**Q:** Can you explain about yourself?  
-**A:** I am **{your name}** and born & brought up in **{your Location}** (e.g., Chennai). I did my BTech in IT Stream during **{Years}** (e.g., 2008). I have a total of **{Number of years}** (e.g., 5+) years of IT experience and currently I am supporting **{Project Name & Company}** as a VMware and Windows Server Administrator. My primary responsibility is VMware Virtualization.
+**1. Explain about yourself:**  
+I am **{your name}** and born & brought up in **{your Location}** (e.g., Chennai). I did my BTech in IT Stream during **{Years}** (e.g., 2008). I have a total of **{Number of years}** (e.g., 5+) years of IT experience and currently I am supporting **{Project Name & Company}** as a VMware and Windows Server Administrator. My primary responsibility is VMware Virtualization.
 
 ---
 
 ## Infrastructure Overview
 
-**Q:** Can you explain your infrastructure?  
-**A:** Currently, I am supporting XXXX as VMware and Windows administrator, managing 20+ physical ESXi servers and 400+ VMs. We have data centers in the USA & UK regions and provide 24x7 support.  
+**2. Explain your infrastructure:**  
+Currently, I am supporting XXXX as VMware and Windows administrator, managing 20+ physical ESXi servers and 400+ VMs. We have data centers in the USA & UK regions and provide 24x7 support.  
 All 20 hosts run ESXi 5.5 on HP ProLiant BL460c G4, managed with HP C7000 Enclosure and OA (Onboard Administrator). I also have knowledge of Cisco UCS Manager 2.2 (3g), Blade Cisco B200-M3 & B440-M2.
 
 - 2 clusters, each with 10 hosts
@@ -23,36 +23,34 @@ All 20 hosts run ESXi 5.5 on HP ProLiant BL460c G4, managed with HP C7000 Enclos
 
 ## Roles and Responsibilities
 
-### Build Level Activities
+**3. Build Level Activities:**  
+- ESXi Build  
+- Windows Physical Build  
+- VM build with template & ISO  
+- Cluster build (HA & DRS configuration)  
+- Storage adding & network switches configuration  
 
-- ESXi Build
-- Windows Physical Build
-- VM build with template & ISO
-- Cluster build (HA & DRS configuration)
-- Storage adding & network switches configuration
-
-### Operational Responsibilities
-
-- Server UP/DOWN issues
-- Services UP/DOWN issues (Service Start & Stop)
-- Resource utilization analysis (High Memory, High CPU, High Network Traffic)
-- Disk & Datastore issues (Low disk space)
-- Patching of VM & ESXi (Microsoft Security, Non-Critical & Critical Patches, ESXi Patches from VC)
-- ESXi & vCenter upgradation
-- VM tool & VM H/W upgradation (requires downtime)
-- Faulty H/W replacement (coordinating with vendors)
-- Daily operations meetings & weekly CAB calls
-- Handling change incidents, service requests, and problem management
-- Environmental upgradation activities (4.0 to 5.5)
-- RCA, on-call support, escalation matrix
-- Technical document preparation
-- Inventory & firmware updates
+**4. Operational Responsibilities:**  
+- Server UP/DOWN issues  
+- Services UP/DOWN issues (Service Start & Stop)  
+- Resource utilization analysis (High Memory, High CPU, High Network Traffic)  
+- Disk & Datastore issues (Low disk space)  
+- Patching of VM & ESXi (Microsoft Security, Non-Critical & Critical Patches, ESXi Patches from VC)  
+- ESXi & vCenter upgradation  
+- VM tool & VM H/W upgradation (requires downtime)  
+- Faulty H/W replacement (coordinating with vendors)  
+- Daily operations meetings & weekly CAB calls  
+- Handling change incidents, service requests, and problem management  
+- Environmental upgradation activities (4.0 to 5.5)  
+- RCA, on-call support, escalation matrix  
+- Technical document preparation  
+- Inventory & firmware updates  
 
 ---
 
 ## Hardware Questions and Answers
 
-### Types of Hardware & Remote Boards
+**5. Types of Hardware & Remote Boards:**  
 
 | Vendor   | Remote Board | Rack Models | Blade Models |
 |----------|--------------|-------------|--------------|
@@ -66,41 +64,37 @@ All 20 hosts run ESXi 5.5 on HP ProLiant BL460c G4, managed with HP C7000 Enclos
 
 ## UCS and Key Components
 
-**Q:** What is UCS and UCS Key Components?  
-**A:**  
+**6. What is UCS and UCS Key Components?**  
 *Add your answer here...*
 
 ---
 
 ## RAID Configuration in HP, CISCO & DELL Rack Servers
 
-**Q:** How to configure RAID 0, 1, 5 & 6?  
-**A:**  
+**7. How to configure RAID 0, 1, 5 & 6?**  
 **HP:**  
-- Use HP Smart Start for models < G7.
-- Use Intelligent Provisioning (F10) for models > G7.
-- RAID 1 for OS (C:), RAID 5 for Application (D:), RAID 6 for double parity.
+- Use HP Smart Start for models < G7.  
+- Use Intelligent Provisioning (F10) for models > G7.  
+- RAID 1 for OS (C:), RAID 5 for Application (D:), RAID 6 for double parity.  
 
 **CISCO:**  
-*Add details...*
+*Add details...*  
 
 **DELL:**  
-*Add details...*
+*Add details...*  
 
 ---
 
 ## ILO Configuration
 
-**Q:** How to configure ILO for Production Servers?  
-**A:**  
+**8. How to configure ILO for Production Servers?**  
 *Add your answer here...*
 
 ---
 
 ## Updating VLANs in Virtual Connect Manager
 
-**Q:** How to update VLANs in Virtual Connect Manager (VC--Chassis)?  
-**A:**  
+**9. How to update VLANs in Virtual Connect Manager (VC--Chassis)?**  
 When using HP Virtual Connect Flex-10 and HP blades with Flex-10 LOM, you can subdivide LOMs into FlexNICs. Multiple VLANs can be mapped to FlexNICs, but the same VLAN cannot be mapped to two different FlexNICs from the same LOM.
 
 ---
