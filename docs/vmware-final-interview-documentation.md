@@ -95,7 +95,14 @@ All 20 hosts run ESXi 5.5 on HP ProLiant BL460c G4, managed with HP C7000 Enclos
 ## Updating VLANs in Virtual Connect Manager
 
 **6. How to update VLANs in Virtual Connect Manager (VC--Chassis)?**  
-When using HP Virtual Connect Flex-10 and HP blades with Flex-10 LOM, you can subdivide LOMs into FlexNICs. Multiple VLANs can be mapped to FlexNICs, but the same VLAN cannot be mapped to two different FlexNICs from the same LOM.
+When using HP Virtual Connect Flex-10 and HP blades that have Flex-10 LOM (LAN on Motherboard) interfaces. As you might already know, Flex-10 LOMs have the ability to “subdivide” themselves into four logical instances, each of them a valid PCIe function, which are called FlexNICs. These FlexNICs appear as real, actual, physical NICs to the operating system installed on the blades.
+This includes VMware ESX/ESXi. In the Virtual Connect Manager, though, you have the ability to fine-tune the amount of bandwidth allocated to each of these FlexNICs, up to the shared maximum of 10Gbps.
+This is pretty cool, but there is one limitation of which you must be aware—a limitation that is particularly significant in VMware ESX/ESXi environments. When you use the Multiple Networks option to map multiple VLANs onto a FlexNIC, you can’t map the same VLAN onto two different FlexNICs from the same LOM.
+The same VLANs we can’t map to single network connections. Why? Because each of these connections are 
+logical FlexNICs on the same LOM (LAN on Motherboard)  and you can’t map the same VLANs to more than 
+one FlexNIC on the same LOM.
+Multiple VLANs are mapped to (More connections) in Virtual Connect Manager
+
 
 ---
 
