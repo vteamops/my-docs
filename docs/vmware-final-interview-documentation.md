@@ -5,16 +5,14 @@
 ## About Yourself
 
 **Q:** Can you explain about yourself?  
-**A:**  
-I am **{your name}** and born & brought up in **{your Location}** (e.g., Chennai). I did my BTech in IT Stream during **{Years}** (e.g., 2008). I have a total of **{Number of years}** (e.g., 5+) years of IT experience and currently I am supporting **{Project Name & Company}** as a VMware and Windows Server Administrator. My primary responsibility is VMware Virtualization.
+**A:** I am **{your name}** and born & brought up in **{your Location}** (e.g., Chennai). I did my BTech in IT Stream during **{Years}** (e.g., 2008). I have a total of **{Number of years}** (e.g., 5+) years of IT experience and currently I am supporting **{Project Name & Company}** as a VMware and Windows Server Administrator. My primary responsibility is VMware Virtualization.
 
 ---
 
 ## Infrastructure Overview
 
 **Q:** Can you explain your infrastructure?  
-**A:**  
-Currently, I am supporting XXXX as VMware and Windows administrator, managing 20+ physical ESXi servers and 400+ VMs. We have data centers in the USA & UK regions and provide 24x7 support.  
+**A:** Currently, I am supporting XXXX as VMware and Windows administrator, managing 20+ physical ESXi servers and 400+ VMs. We have data centers in the USA & UK regions and provide 24x7 support.  
 All 20 hosts run ESXi 5.5 on HP ProLiant BL460c G4, managed with HP C7000 Enclosure and OA (Onboard Administrator). I also have knowledge of Cisco UCS Manager 2.2 (3g), Blade Cisco B200-M3 & B440-M2.
 
 - 2 clusters, each with 10 hosts
