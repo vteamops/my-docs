@@ -99,7 +99,7 @@ When using HP Virtual Connect Flex-10 and HP blades that have Flex-10 LOM (LAN o
 This includes VMware ESX/ESXi. In the Virtual Connect Manager, though, you have the ability to fine-tune the amount of bandwidth allocated to each of these FlexNICs, up to the shared maximum of 10Gbps.
 This is pretty cool, but there is one limitation of which you must be aware—a limitation that is particularly significant in VMware ESX/ESXi environments. When you use the Multiple Networks option to map multiple VLANs onto a FlexNIC, you can’t map the same VLAN onto two different FlexNICs from the same LOM.
 The same VLANs we can’t map to single network connections. Why? Because each of these connections are 
-logical FlexNICs on the same LOM (LAN on Motherboard)  and you can’t map the same VLANs to more than 
+logical FlexNICs on the same LOM (LAN on Motherboard)  and 0J ¸ can’t map the same VLANs to more than 
 one FlexNIC on the same LOM.
 Multiple VLANs are mapped to (More connections) in Virtual Connect Manager
 
