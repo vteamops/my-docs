@@ -1,6 +1,9 @@
+<!-- markdownlint-disable first-line-h1 -->
+
 - Getting started
-- [Home](README.md)
-- [Installation](installation.md)
-- [Usage](usage.md)
-- [VMware Powercli](vmware-powershell-automation.md)
-- [VMware Final Interview](vmware-final-interview-documentation.md)
+
+    - [Home](README.md)
+    - [Installation](installation.md)
+    - [Usage](usage.md)
+    - [VMware Powercli](vmware-powershell-automation.md)
+    - [VMware Final Interview](vmware-final-interview-documentation.md)
