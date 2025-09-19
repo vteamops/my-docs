@@ -59,6 +59,38 @@ esxcli hardware
 
 # Restart management agents
 services.sh restart
+
+# List network interfaces
+esxcli network nic list
+
+# List storage devices
+esxcli storage core device list
+
+# Check datastore usage
+esxcli storage filesystem list
+
+# List running services
+esxcli system services list
+
+# Start/Stop/Restart a service (example: SSH)
+esxcli system services start --service=TSM-SSH
+esxcli system services stop --service=TSM-SSH
+esxcli system services restart --service=TSM-SSH
+
+# Check system uptime
+esxcli system uptime get
+
+# Display system logs
+cat /var/log/syslog.log
+
+# Check host firewall status
+esxcli network firewall get
+
+# Enable maintenance mode
+esxcli system maintenanceMode set --enable true
+
+# Exit maintenance mode
+esxcli system maintenanceMode set --enable false
 ```
 
 ---
