@@ -1,6 +1,6 @@
 <!-- markdownlint-disable first-line-h1 -->
 
-- Getting started
-    - [Installation](installation.md)
-- VMware vSphere 8
-    - [Esxi](esxi.md)
+- Getting started Esxi
+    - [EsxiInstallation](esxiinstallation.md)
+- VMware Esxi vSphere 8
+    - [EsxiOverview](overviewesxi.md)
