@@ -121,3 +121,4 @@
 
 VTeamops Docs provides comprehensive guides, best practices, and troubleshooting tips for managing and automating VMware vCenter 8 environments. Explore topics such as deployment, configuration, PowerCLI automation, and advanced vCenter 8 features to streamline your virtualization
 
+[Explore ESXi Overview](#/Esxi/overviewesxi)
