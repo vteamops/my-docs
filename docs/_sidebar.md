@@ -5,16 +5,16 @@
     - [Home](README.md)
     - [Installation](installation.md)
     - [Usage](usage.md)
-    - [VMware Powercli](/VMwareAutomation/vmware-powershell-automation.md)
-    - [VMware Final Interview](/Troubleshooting/vmware-final-interview-documentation.md)
+    - [VMware Powercli](/vmware_docs/VMwareAutomation/vmware-powershell-automation.md)
+    - [VMware Final Interview](/vmware_docs/Troubleshooting/vmware-final-interview-documentation.md)
 
 - VMware vSphere 8
 
-    - [Esxi](/Esxi/esxi.md)
+    - [Esxi](/vmware_docs/Esxi/esxi.md)
 
-- [Oview view Esxi](/Esxi/README.md)
+- [Oview view Esxi](/vmware_docs/Esxi/README.md)
 
-    - [Esxi Installation](/Esxi/esxiinstallation)
+    - [Esxi Installation](/vmware_docs/Esxi/esxiinstallation)
 
 - VMware vSAN 8
 
