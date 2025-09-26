@@ -5,7 +5,7 @@
     - [Home](README.md)
     - [Installation](installation.md)
     - [Usage](usage.md)
-    - [VMware Powercli](/vmware_docs/VMwareAutomation/vmware-powershell-automation.md)
+    - [VMware Powercli](vmware_docs/VMwareAutomation/vmware-powershell-automation.md)
     - [VMware Final Interview](/vmware_docs/Troubleshooting/vmware-final-interview-documentation.md)
 
 - VMware vSphere 8
