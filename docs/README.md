@@ -3,7 +3,7 @@
 # MASTERING IN VMWARE VSPHERE 8
 
 > COURSE NAME: VMware vSphere 8 Foundations  
->Duration: 75 Hrs
+> Duration: 75 Hrs
 
 ---
 
