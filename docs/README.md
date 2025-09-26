@@ -1,9 +1,5 @@
 # Welcome to VTeamops Docs: Your Guide to Everything Awesome
 
-[Go to ESXi Installation Guide](#/Esxi/esxiinstallation)  
-or  
-[Explore ESXi Overview](#/Esxi/overviewesxi)
-
 # MASTERING IN VMWARE VSPHERE 8
 
 > COURSE NAME: VMware vSphere 8 Foundations  
@@ -120,13 +116,3 @@ or
 - Troubleshooting VMFS mount not mapped
 - After DR, VM’s adapter is lost
 - Issues when VMware Tools are not updated
-
----
-
-# Welcome to VTeamOps Docs
-
-[Go to ESXi Installation Guide](#/Esxi/esxiinstallation)
-
-or
-
-[Explore ESXi Overview](#/Esxi/overviewesxi)
