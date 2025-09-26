@@ -1,5 +1,9 @@
 # Welcome to VTeamops Docs: Your Guide to Everything Awesome
 
+[Go to ESXi Installation Guide](#/Esxi/esxiinstallation)  
+or  
+[Explore ESXi Overview](#/Esxi/overviewesxi)
+
 # MASTERING IN VMWARE VSPHERE 8
 
 > COURSE NAME: VMware vSphere 8 Foundations  
