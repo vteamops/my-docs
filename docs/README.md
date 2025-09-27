@@ -23,32 +23,52 @@
 
 ---
 
-## vSphere 8 Architecture Overview
+![vxRail & vSphere 8 Architecture](images/vxrail_solution1.png)
 
+## vSphere 8 Architecture Overview
 ```mermaid
-flowchart TD
-    VC[vCenter Server (Mgmt)]
-    VC --> ESXi1
-    VC --> ESXi2
-    VC --> ESXi3
-    subgraph Cluster1 [vSAN Cluster]
-        ESXi1[ESXi (Hosts)]
+graph TD
+    subgraph Management Planes
+        VxRailManager["VxRail Manager / vCenter"]
+        NSXTManager["NSX-T Manager"]
     end
-    subgraph Cluster2 [vSAN Cluster]
-        ESXi2[ESXi (Hosts)]
-        ESXi3[ESXi (Hosts)]
+
+    subgraph Physical Network
+        P0["P0"]
+        P1["P1"]
     end
-    Cluster1 <--> Cluster2
-    NSXT1[NSX-T Manager]
-    NSXT2[NSX-T Manager]
-    Cluster1 --> NSXT1
-    Cluster2 --> NSXT2
-    NSXT1 <--> NSXT2
-    SRM1[SRM Primary]
-    SRM2[SRM Secondary]
-    NSXT1 --> SRM1
-    NSXT2 --> SRM2
-    SRM1 <--> SRM2
-    SRM1 --> Prod[Production Site]
-    SRM2 --> DR[DR / Recovery Site]
+
+    subgraph VxRail Host
+        direction TB
+        VxRailManagement["VxRail Management, vSAN, vMotion"]
+        VMK0["VMK 0"]
+        VMK1["VMK 1"]
+        VMK2["VMK 2"]
+        VMWorkload["VM workload"]
+        VM1["VM1"]
+        VM2["VM2"]
+        VM3["VM3"]
+        VM4["VM4"]
+        VM5["VM5"]
+
+        VxRailManagement --- VMK0
+        VxRailManagement --- VMK1
+        VxRailManagement --- VMK2
+        VMWorkload --- VM1
+        VMWorkload --- VM2
+        VMWorkload --- VM3
+        VMWorkload --- VM4
+        VMWorkload --- VM5
+    end
+
+    VxRailManager --> P0
+    VxRailManager --> P1
+    NSXTManager --> P0
+    NSXTManager --> P1
+
+    P0 --> VxRailManagement
+    P1 --> VxRailManagement
+    P0 --> VMWorkload
+    P1 --> VMWorkload
 ```
+

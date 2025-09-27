@@ -305,3 +305,198 @@ Write-Host "VM power operations completed." -ForegroundColor Green
 ### **Notes**
 - Modify VM selection as needed.
 - Be cautious with power operations to avoid data loss.
+
+# VMware vSAN PowerCLI Automation
+
+This document provides PowerCLI automation examples for managing and reporting on vSAN clusters.
+
+---
+
+## 1. Connect to vCenter
+```powershell
+# Connect to vCenter Server
+Connect-VIServer -Server vcenter01.lab.local -User admin@vsphere.local -Password 'YourPassword'
+```
+
+---
+
+## 2. List All vSAN Clusters
+```powershell
+# Get vSAN-enabled clusters
+Get-Cluster | Where-Object { $_.VSANEnabled -eq $true } | Select Name, VSANEnabled
+```
+
+---
+
+## 3. Check vSAN Cluster Health
+```powershell
+# Check vSAN health summary
+Get-VsanClusterConfiguration -Cluster "Prod-Cluster" | Select Cluster, Enabled, HealthCheckInterval, DataEfficiencyEnabled
+```
+
+---
+
+## 4. Get vSAN Disk Groups and Capacity
+```powershell
+# List Disk Groups and capacity details
+Get-VsanDiskGroup -Cluster "Prod-Cluster" | 
+Select Cluster, Ssd, CacheDiskCapacityGB, CapacityDisks, @{N="Capacity(GB)";E={($_.CapacityDisks | Measure-Object CapacityGB -Sum).Sum}}
+```
+
+---
+
+## 5. Check vSAN Storage Policy Compliance
+```powershell
+# Verify VMs against their storage policy
+Get-VM | Where-Object {$_.ExtensionData.StoragePolicyId -ne $null} | 
+ForEach-Object {
+    $result = Get-SpbmEntityConfiguration -Entity $_
+    [PSCustomObject]@{
+        VMName  = $_.Name
+        Policy  = $result.StoragePolicy.Name
+        ComplianceStatus = $result.ComplianceStatus
+    }
+}
+```
+
+---
+
+## 6. Monitor vSAN Capacity Usage
+```powershell
+# Show vSAN usage summary for each cluster
+Get-Cluster | Where-Object {$_.VSANEnabled} | 
+ForEach-Object {
+    $vsanConfig = Get-VsanClusterConfiguration -Cluster $_
+    [PSCustomObject]@{
+        Cluster = $_.Name
+        UsedGB  = [math]::Round($vsanConfig.Usage.UsedSpaceGB,2)
+        FreeGB  = [math]::Round($vsanConfig.Usage.FreeSpaceGB,2)
+        TotalGB = [math]::Round($vsanConfig.Usage.TotalSpaceGB,2)
+    }
+}
+```
+
+---
+
+## 7. vSAN Resyncing Objects
+```powershell
+# Check if any objects are resyncing
+Get-VsanResyncingComponent -Cluster "Prod-Cluster" | 
+Select VMName, ComponentUuid, BytesToSync, OwnerHost
+```
+
+---
+
+## 8. Export vSAN Report to CSV
+```powershell
+# Export VM storage compliance report to CSV
+$report = Get-VM | Where-Object {$_.ExtensionData.StoragePolicyId -ne $null} | 
+ForEach-Object {
+    $result = Get-SpbmEntityConfiguration -Entity $_
+    [PSCustomObject]@{
+        VMName  = $_.Name
+        Policy  = $result.StoragePolicy.Name
+        ComplianceStatus = $result.ComplianceStatus
+    }
+}
+$report | Export-Csv "C:\Reports\vSAN_VM_Compliance.csv" -NoTypeInformation
+```
+
+---
+
+## Notes
+- You need **PowerCLI 13.x+** for some vSAN cmdlets.  
+- `Get-Vsan*` cmdlets come from the **VMware.VimAutomation.Storage** module.  
+- Run `Get-Module -Name VMware* -ListAvailable` to confirm modules are loaded.  
+
+# vCenter VAMI Upgrade PowerCLI Automation
+
+This document provides PowerCLI and REST API automation examples for managing and upgrading vCenter through the VAMI interface.
+
+---
+
+## 1. Connect to VAMI API
+```powershell
+# Define vCenter VAMI credentials and server
+$vamiServer = "vcenter01.lab.local"
+$vcUser = "root"
+$vcPass = "YourPassword"
+
+# Ignore cert warnings
+add-type @"
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+public class TrustAllCertsPolicy : ICertificatePolicy {
+    public bool CheckValidationResult(
+        ServicePoint srvPoint, X509Certificate certificate,
+        WebRequest request, int certificateProblem) { return true; }
+}
+"@
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+
+# Create a session
+$secpasswd = ConvertTo-SecureString $vcPass -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential ($vcUser, $secpasswd)
+
+# Get session token from VAMI
+$response = Invoke-RestMethod -Method Post -Uri "https://$vamiServer:5480/rest/com/vmware/cis/session" -Credential $cred -SkipCertificateCheck
+$session = $response.value
+$headers = @{ "vmware-api-session-id" = $session }
+```
+
+---
+
+## 2. Check Current vCenter Version
+```powershell
+# Get current appliance version
+Invoke-RestMethod -Method Get -Uri "https://$vamiServer:5480/rest/appliance/system/version" -Headers $headers -SkipCertificateCheck
+```
+
+---
+
+## 3. Check Available Updates
+```powershell
+# List available updates
+Invoke-RestMethod -Method Get -Uri "https://$vamiServer:5480/rest/appliance/update/pending" -Headers $headers -SkipCertificateCheck
+```
+
+---
+
+## 4. Stage the Update
+```powershell
+# Stage the update before installing
+Invoke-RestMethod -Method Post -Uri "https://$vamiServer:5480/rest/appliance/update/stage" -Headers $headers -SkipCertificateCheck
+```
+
+---
+
+## 5. Install the Update
+```powershell
+# Trigger update installation
+Invoke-RestMethod -Method Post -Uri "https://$vamiServer:5480/rest/appliance/update/install" -Headers $headers -SkipCertificateCheck
+```
+
+---
+
+## 6. Monitor Update Status
+```powershell
+# Check status of update
+Invoke-RestMethod -Method Get -Uri "https://$vamiServer:5480/rest/appliance/update" -Headers $headers -SkipCertificateCheck
+```
+
+---
+
+## 7. Reboot if Required
+```powershell
+# Reboot appliance if required
+Invoke-RestMethod -Method Post -Uri "https://$vamiServer:5480/rest/appliance/system/shutdown?action=reboot" -Headers $headers -SkipCertificateCheck
+```
+
+---
+
+## Notes
+- Always take a **backup** or snapshot of vCenter before upgrade.  
+- Make sure **PSC / vSphere services** dependencies are healthy.  
+- Upgrade should be done in a **maintenance window**.  
+- Some updates may require manual acceptance of **EULA**.  
+
