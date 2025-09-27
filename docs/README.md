@@ -22,3 +22,36 @@
 - Troubleshooting Scenarios
 
 ---
+
+## vSphere 8 Architecture Overview
+
+```
+                +-----------------------------+
+                |    vCenter Server (Mgmt)    |
+                +-----------------------------+
+                          |
+     -----------------------------------------------------
+     |                        |                          |
++---------+             +---------+               +-------------+
+|  ESXi   |             |  ESXi   |               |    ESXi     |
+| (Hosts) |             | (Hosts) |               |   (Hosts)   |
++----+----+             +----+----+               +------+------+
+     |                       |                           |
+     |                       |                           |
+   vSAN Cluster  <--- Distributed Storage --->  vSAN Cluster
+     |                                                 |
+     |                                                 |
++----------+                                  +----------------+
+|  NSX-T   |   <-- Virtual Networks/Security -->   |   NSX-T    |
+| Manager  |                                  |   Manager      |
++----------+                                  +----------------+
+     |                                                 |
+     |                                                 |
++-----------------+                          +-------------------+
+|   SRM Primary   | <--- Replication + DR -->|   SRM Secondary   |
++-----------------+                          +-------------------+
+     |                                                 |
+  Production Site                                DR / Recovery Site
+```
+
+---
