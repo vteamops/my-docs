@@ -25,33 +25,36 @@
 
 ## vSphere 8 Architecture Overview
 
-```
-                +-----------------------------+
-                |    vCenter Server (Mgmt)    |
-                +-----------------------------+
-                          |
-     -----------------------------------------------------
-     |                        |                          |
-+---------+             +---------+               +-------------+
-|  ESXi   |             |  ESXi   |               |    ESXi     |
-| (Hosts) |             | (Hosts) |               |   (Hosts)   |
-+----+----+             +----+----+               +------+------+
-     |                       |                           |
-     |                       |                           |
-   vSAN Cluster  <--- Distributed Storage --->  vSAN Cluster
-     |                                                 |
-     |                                                 |
-+----------+                                  +----------------+
-|  NSX-T   |   <-- Virtual Networks/Security -->   |   NSX-T    |
-| Manager  |                                  |   Manager      |
-+----------+                                  +----------------+
-     |                                                 |
-     |                                                 |
-+-----------------+                          +-------------------+
-|   SRM Primary   | <--- Replication + DR -->|   SRM Secondary   |
-+-----------------+                          +-------------------+
-     |                                                 |
-  Production Site                                DR / Recovery Site
-```
+```mermaid
+flowchart TD
+    VC[vCenter Server (Mgmt)]
+    VC --> ESXi1
+    VC --> ESXi2
+    VC --> ESXi3
 
----
+    subgraph Cluster1 [vSAN Cluster]
+        ESXi1[ESXi (Hosts)]
+    end
+
+    subgraph Cluster2 [vSAN Cluster]
+        ESXi2[ESXi (Hosts)]
+        ESXi3[ESXi (Hosts)]
+    end
+
+    Cluster1 <--> Cluster2
+
+    NSXT1[NSX-T Manager]
+    NSXT2[NSX-T Manager]
+    Cluster1 --> NSXT1
+    Cluster2 --> NSXT2
+    NSXT1 <--> NSXT2
+
+    SRM1[SRM Primary]
+    SRM2[SRM Secondary]
+    NSXT1 --> SRM1
+    NSXT2 --> SRM2
+    SRM1 <--> SRM2
+
+    SRM1 --> Prod[Production Site]
+    SRM2 --> DR[DR / Recovery Site]
+```
