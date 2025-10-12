@@ -12,7 +12,7 @@
 
     - [Esxi](/vmware_docs/Esxi/esxi.md)
 
-- [Oview view Esxi](/vmware_docs/Esxi/README.md)
+    - [Oview view Esxi](/vmware_docs/Esxi/README.md)
 
     - [Esxi Installation](/vmware_docs/Esxi/esxiinstallation)
 
@@ -20,3 +20,7 @@
 
 - VMware SRM 8
 
+- VMware vSphere Automation 8
+
+    - [Powercli Overview](/vmware_docs/VMwareAutomation/overviewpowercli.md)
+    - [Install Powercli](/vmware_docs/VMwareAutomation/install-powercli.md)
