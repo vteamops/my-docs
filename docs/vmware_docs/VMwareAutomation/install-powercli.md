@@ -3,7 +3,7 @@
 > ⚠️ **Before you begin:**  
 > It is recommended to have prior knowledge of PowerShell and basic programming or business logic concepts before proceeding with this documentation.
 
-VMware PowerCLI is a set of PowerShell modules for managing and automating VMware environments. Installing PowerCLI on Windows is straightforward and can be done using PowerShell's built-in module management commands.
+VMware PowerCLI is a set of PowerShell modules for managing and automating VMware environments. Installing PowerCLI on Windows is straightforward and can be done using PowerShell's built-in method module management commands.
 
 ---
 
