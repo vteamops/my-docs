@@ -31,7 +31,7 @@ GitHub is a web-based hosting service for Git repositories. It provides:
 
 ![Git Central](../../images/Git-distributed-architecture.png)
 
-![Git Local & Centralized](../../images//Git-Local-Remote-Architecture.png)
+![Git Local & Centralized](../../images/Git-Local-Remote-Architecture.png)
 
 TLDR:
 
