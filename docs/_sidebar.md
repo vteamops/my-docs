@@ -2,25 +2,18 @@
 
 - Getting started
 
-    - [Home](README.md)
-    - [Installation](installation.md)
-    - [Usage](usage.md)
-    - [VMware Powercli](vmware_docs/VMwareAutomation/vmware-powershell-automation.md)
-    - [VMware Final Interview](/vmware_docs/Troubleshooting/vmware-final-interview-documentation.md)
+- Version Control System
 
-- VMware vSphere 8
+    - Git & Github
 
-    - [Esxi](/vmware_docs/Esxi/esxi.md)
+        - [Git Overview](/devops_docs/Git/git-overview.md)
+        - [Linux](/devops_docs/linux-for-devops.md)
 
-    - [Oview view Esxi](/vmware_docs/Esxi/README.md)
+- Continious Deployment 
+    - Ansible
 
-    - [Esxi Installation](/vmware_docs/Esxi/esxiinstallation)
+    - Terraform
 
-- VMware vSAN 8
+    - Docker
 
-- VMware SRM 8
-
-- VMware vSphere Automation 8
-
-    - [Powercli Overview](/vmware_docs/VMwareAutomation/overviewpowercli.md)
-    - [Install Powercli](/vmware_docs/VMwareAutomation/install-powercli.md)
+    - Kubernetes

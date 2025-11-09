@@ -23,7 +23,7 @@
 
 ---
 
-![vxRail & vSphere 8 Architecture](images/vxrail_solution1.png)
+
 
 ## vSphere 8 Architecture Overview
 ```mermaid
