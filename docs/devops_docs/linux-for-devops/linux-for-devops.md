@@ -3,13 +3,22 @@
 ## 📘 1. Linux Fundamentals for DevOps
 
 ### 1.1 File System & Navigation
-| Command | Description |
-|----------|--------------|
-| `pwd` | Print working directory |
-| `ls -lAh` | List files with details and human-readable sizes |
-| `cd /path` | Change directory |
-| `mkdir /tmp/test` | Create directory |
-| `rm -rf /tmp/test` | Remove directory recursively |
+
+| Command                      | Description                                            |
+|------------------------------|-------------------------------------------------------|
+| `pwd`                        | Print working directory: shows your current folder     |
+| `ls -lAh`                    | List files/folders with details, human-readable sizes  |
+| `cd /path`                   | Change directory to specified path                     |
+| `mkdir /tmp/test`            | Create a directory at `/tmp/test`                      |
+| `rm -rf /tmp/test`           | Recursively remove directory `/tmp/test`               |
+| `rmdir /tmp/test`            | Remove an empty directory only                         |
+| `rm file.txt`                | Remove a file named `file.txt`                         |
+| `cp src dst`                 | Copy files or directories (`-r` for recursive)         |
+| `mv src dst`                 | Move or rename files or directories                    |
+| `find /path -name file.txt`  | Search for files/directories by name                   |
+| `tree /path`                 | Display directory structure visually                   |
+| `ln -s target linkname`      | Create symbolic links to files or directories          |
+
 
 **Important Directories**
 - `/etc` → System config files  
