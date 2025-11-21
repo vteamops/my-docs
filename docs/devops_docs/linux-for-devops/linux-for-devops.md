@@ -29,11 +29,17 @@
 - `/usr/bin` → User binaries  
 
 ### 1.2 File Permissions & Ownership
-| Command | Description |
-|----------|--------------|
-| `chmod 755 script.sh` | Set permissions (rwxr-xr-x) |
-| `chown user:group file` | Change owner and group |
-| `ls -l` | Show permissions |
+
+| Command                  | Description                                        |
+|--------------------------|---------------------------------------------------|
+| `useradd` / `userdel`    | Add/delete user accounts                          |
+| `passwd`                 | Change user passwords                             |
+| `groupadd` / `groupdel`  | Add/delete user groups                            |
+| `id`                     | Display user and group information                |
+| `chmod`                  | Change file or directory permissions              |
+| `chown`                  | Change file or directory ownership                |
+| `chgrp`                  | Change group ownership of files or directories    |
+| `sudo`                   | Execute commands with superuser privileges        |
 
 Example:
 ```bash
