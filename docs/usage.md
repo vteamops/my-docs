@@ -1,118 +1,89 @@
-# Welcome to VTeamops Docs: Your Guide to Everything Awesome
+# Comprehensive DevOps Syllabus
 
-# MASTERING IN VMWARE VSPHERE 8
-
-> COURSE NAME: VMware vSphere 8 Foundations  
-> Duration: 75 Hrs
+This syllabus is designed to provide a structured learning path covering essential DevOps tools and practices: Git, GitHub, Ansible, Terraform, Linux Bash, Docker, and Kubernetes.
 
 ---
 
-## Knowledge Areas
+## I. DevOps Fundamentals & Linux Basics
 
-### vSphere Editions and Features
-- Explain available vSphere editions and features
-- Explain the various data center solutions that interact with vSphere
-
-### vSphere Architecture and Solutions
-- Identify vSphere Architecture and Solutions for a given use case
-- Explain ESXi and vCenter Server architectures
-- Explain new solutions offered in the current version
-- Determine appropriate vSphere edition based on customer requirements
-
-### vCenter Server Installation and Configuration
-- Install and configure vCenter Server
-- Deploy the vCenter Appliance (vCSA)
-- Install vCenter Server onto a virtual machine
-- Given a scenario, size the vCenter Database based on requirements
-- Install additional vCenter Server Components
-- Install and configure vSphere Client / vSphere Web Client
-- Install/Remove vSphere Client plug-ins
-- Enable/Disable vSphere Client plug-ins
-- License vCenter Server
-- Determine availability requirements for a vCenter Server in a given vSphere implementation
-
-### ESXi Installation and Configuration
-- Install and configure ESXi 7
-- Given a scenario, validate if an ESXi configuration meets given requirements
-- Perform a scripted installation of ESXi
-- Perform an interactive installation of ESXi using media or PXE
-- Configure NTP on an ESXi Host
-- Configure DNS and routing on an ESXi Host
-- Configure SSH and Shell access on an ESXi Host
-- Configure logs to be sent to a syslog server
-- License an ESXi host
+*   **Introduction to DevOps:** Understand core principles, culture, the software development life cycle (SDLC), and the role of a DevOps engineer.
+*   **Linux/Unix Fundamentals:**
+    *   Basic commands and navigation of the Linux file system (`ls`, `cd`, `mkdir`, `cp`, `mv`, `rm`, etc.).
+    *   User and group management, file permissions (`chmod`, `chown`).
+    *   Process management, service management, and software package installation (`YUM`/`apt`).
+    *   Networking fundamentals: IP addresses, firewalls, SSH, etc.
 
 ---
 
-## Site Recovery Manager 8.x (Install, Configure & Manage)
+## II. Version Control System (VCS)
 
-### Disaster Recovery with Site Recovery Manager
-- Examine disaster recovery options with Site Recovery Manager
-- Describe Site Recovery Manager integration with VMware vSphere® Client™
-- Discuss Site Recovery Manager features
+*   **Git:**
+    *   Centralized vs. Distributed VCS.
+    *   Installation and basic configuration of Git.
+    *   Working with repositories: clone, status, add, commit, push, pull.
+    *   Branching and Merging: creating, managing, and merging branches; handling merge conflicts; stashing, rebasing, reverting, and resetting.
+*   **GitHub:**
+    *   Introduction to GitHub as a remote repository platform.
+    *   Creating and managing remote repositories.
+    *   Collaborating using pull requests and code reviews.
 
-### Site Recovery Manager Architecture and Deployment
-- Site Recovery Manager architecture
-- Deploy & configure Site Recovery Manager
-- Identify requirements to deploy Site Recovery Manager
-- Discuss the benefits of the Site Recovery Manager appliance
-- Explore vSphere deployment models
-- Deploy the Site Recovery Manager appliance
-- Navigate the Site Recovery Manager configuration user interface
-- Register Site Recovery Manager with VMware vCenter Server®
-- Configure site pairing
-- Perform updates to the Site Recovery Manager appliance
+---
 
-### Inventory Mappings and Replication
-- Configuring inventory mappings
-- Outline the importance of inventory mappings and placeholders
-- Examine configuration options for inventory mappings
-- Describe array-based replication
-- Discuss the role of the Storage Replication Adapter (SRA)
-- Explore the relationship between devices, consistency groups, and datastore groups
-- Configure array pairs
-- Explore vSphere Replication architecture and functionality
-- Formulate use cases for vSphere Replication
-- Deploy and configure vSphere Replication appliance and server
-- Configure vSphere Replication for virtual machines
-- Explain the importance of datastore mappings
-- Describe vSphere Replication recovery point objective scheduling and disk transfer protocol
+## III. Linux Bash Scripting & Automation
 
-### Protection Groups and Recovery Plans
-- Define protection group functionality
-- Examine differences between array-based, replication-based, and storage profile protection groups
-- Create and manage protection groups
-- Discuss protection group settings
-- Remove protection from a virtual machine
-- Create a storage profile protection group
-- Discuss recovery plan concepts and steps
-- Discuss network planning and customization options in recovery planning
-- Implement and investigate recovery plan options
-- Use cases for Site Recovery Manager
-- Describe planned migration and Site Recovery Manager workflows
-- Discuss the importance of VMware vSphere® VMFS resignaturing
-- Examine Site Recovery Manager integration with various vSphere technologies
-- Conduct a recovery plan test
-- Perform recovery plan test execution
-- Identify effects on the storage layer during recovery steps
-- Explain recovery plan execution in planned migration or disaster recovery mode
-- Identify recovery steps for each execution type
-- Describe how to protect a data center
-- Examine failback steps
+*   **Shell Scripting Basics:**
+    *   Understanding the shell, basic syntax, and executing scripts.
+    *   Variables, conditional statements (`if`/`else`), and loops.
+    *   Text processing and I/O redirection (`grep`, `find`, `cat`, etc.).
+    *   Writing automation scripts for common tasks (e.g., user management, monitoring).
 
-### Monitoring and Troubleshooting
-- Discuss Site Recovery Manager alarms and history reports
-- Configure advanced Site Recovery Manager settings
-- Modify logging levels and collect log bundles
-- Identify key log locations
+---
 
-#### Troubleshooting Scenarios
-- vSphere replication fail to DR Site
-- Storage array replication failed
-- Failover unable to move the VM object
-- SRDF suspending frequently
-- Unable to reverse the VMs back to PR (Error: Timeout)
-- Unable to re-protect the VMs replication
-- Troubleshooting VMFS mount not mapped
-- After DR, VM’s adapter is lost
-- Issues when VMware Tools are not updated
+## IV. Containerization with Docker
+
+*   **Introduction to Containers:** Understanding virtualization versus containerization.
+*   **Docker Essentials:**
+    *   Docker architecture, installation, and basic commands (`run`, `ps`, `images`, `rm`).
+    *   Creating images with `Dockerfile`: best practices and multi-stage builds.
+    *   Managing images: tagging, pushing, and pulling from registries like Docker Hub.
+    *   Docker networking and data persistence using volumes.
+    *   Orchestrating multi-container applications using `Docker Compose`.
+
+---
+
+## V. Configuration Management & IaC
+
+*   **Infrastructure as Code (IaC) Concepts:** Treating infrastructure as code and automating environment setup.
+*   **Ansible:**
+    *   Introduction to Ansible architecture and setup.
+    *   Writing Playbooks using YAML for configuration management.
+    *   Using modules, ad-hoc commands, and roles.
+    *   Automating application deployment and server configuration.
+*   **Terraform:**
+    *   Terraform fundamentals: providers, resources, and HCL (HashiCorp Configuration Language).
+    *   Provisioning infrastructure on a cloud platform (e.g., AWS, Azure, GCP).
+    *   Managing state files, variables, and reusable modules.
+    *   Commands: `init`, `plan`, `apply`, `destroy`.
+
+---
+
+## VI. Container Orchestration with Kubernetes
+
+*   **Introduction to Kubernetes (K8s):** Understanding the need for orchestration and K8s architecture (Master node, Worker node, Control Plane components).
+*   **K8s Components & Objects:**
+    *   Pods, ReplicaSets, Deployments, and Services.
+    *   Managing configuration with ConfigMaps and Secrets.
+    *   Storage (Persistent Volumes and Persistent Volume Claims) and networking concepts.
+    *   Tools: Interacting with clusters using `kubectl` and deploying applications via YAML files.
+
+---
+
+## VII. Project & CI/CD Integration
+
+*   **CI/CD Pipeline Overview:** Understanding continuous integration and continuous deployment workflows.
+*   **Hands-on Project:** Integrate all learned tools into a real-world project. This could involve:
+    *   Storing application code and infrastructure code in GitHub.
+    *   Using Terraform to provision cloud infrastructure.
+    *   Building a Docker image from the application code.
+    *   Deploying the containerized application onto a Kubernetes cluster.
+    *   Automating post-deployment configurations using Ansible.
