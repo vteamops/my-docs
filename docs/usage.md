@@ -8,7 +8,7 @@ This syllabus is designed to provide a structured learning path covering essenti
 
 *   **Introduction to DevOps:** Understand core principles, culture, the software development life cycle (SDLC), and the role of a DevOps engineer.
 *   **Linux/Unix Fundamentals:**
-    *   Basic commands and navigation of the Linux file system (`ls`, `cd`, `mkdir`, `cp`, `mv`, `rm`, etc.).
+    *   Basic commands and navigation of the Linux file system (`ls`, `cd`, `mkdir`, `cp`, `mv`, `rm`, `ps`, etc.).
     *   User and group management, file permissions (`chmod`, `chown`).
     *   Process management, service management, and software package installation (`YUM`/`apt`).
     *   Networking fundamentals: IP addresses, firewalls, SSH, etc.
