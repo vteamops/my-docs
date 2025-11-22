@@ -5,7 +5,7 @@
 ### 1.1 File System & Navigation
 
 | Command                      | Description                                            |
-|------------------------------|-------------------------------------------------------|
+|------------------------------|------------------------------------------------------|
 | `pwd`                        | Print working directory: shows your current folder     |
 | `ls -lAh`                    | List files/folders with details, human-readable sizes  |
 | `cd /path`                   | Change directory to specified path                     |
