@@ -81,7 +81,7 @@ This syllabus is designed to provide a structured learning path covering essenti
 ## VII. Project & CI/CD Integration
 
 *   **CI/CD Pipeline Overview:** Understanding continuous integration and continuous deployment workflows.
-*   **Hands-on Project:** Integrate all learned tools into a real-world project. This could involve:
+*   **Hands-on Project:** Integrate all learned tools into a real-world project. This could involves:
     *   Storing application code and infrastructure code in GitHub.
     *   Using Terraform to provision cloud infrastructure.
     *   Building a Docker image from the application code.
