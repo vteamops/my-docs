@@ -1,8 +1,33 @@
 # 🐧 Linux for DevOps Engineers
 
-## 📘 1. Linux Fundamentals for DevOps
+````markdown
+Contents
+1 Linux Fundamentals for DevOps
+  1.1 File System & Navigation
+  1.2 File Permissions & Ownership
+  1.3 Process Management
+  1.4 Networking & SSH
+  1.5 Package Management
+  1.6 Systemd & Cron
+  1.7 Monitoring & Logs
+  1.8 Shell Scripting Basics
 
-### 1.1 File System & Navigation
+2 Linux Cheatsheet for Daily DevOps
+
+3 Docker & Kubernetes CLI + Linux Troubleshooting
+  3.1 Docker Basics
+  3.2 Kubernetes CLI
+  3.3 Linux + Container Troubleshooting
+
+Useful Tools
+
+Summary
+
+🐧 Linux for DevOps Engineers
+
+📘 1. Linux Fundamentals for DevOps
+
+1.1 File System & Navigation
 
 | Command                      | Description                                            |
 |------------------------------|------------------------------------------------------|
@@ -28,7 +53,7 @@
 - `/tmp` → Temporary files  
 - `/usr/bin` → User binaries  
 
-### 1.2 File Permissions & Ownership
+1.2 File Permissions & Ownership
 
 | Command                  | Description                                        |
 |--------------------------|---------------------------------------------------|
@@ -46,7 +71,7 @@ Example:
 -rwxr-xr--  1 devops dev  1234 Nov 9  script.sh
 ```
 
-### 1.3 Process Management
+1.3 Process Management
 | Command | Description |
 |----------|--------------|
 | `ps aux | grep nginx` | View running processes |
@@ -55,7 +80,7 @@ Example:
 | `systemctl status nginx` | Check service status |
 | `journalctl -u nginx` | View service logs |
 
-### 1.4 Networking & SSH
+1.4 Networking & SSH
 | Command | Description |
 |----------|--------------|
 | `ip a` / `ifconfig` | Show IP interfaces |
@@ -72,7 +97,7 @@ sudo ufw allow 22/tcp
 sudo ufw enable
 ```
 
-### 1.5 Package Management
+1.5 Package Management
 **Debian/Ubuntu**
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -84,7 +109,7 @@ sudo yum install httpd
 sudo dnf upgrade
 ```
 
-### 1.6 Systemd & Cron
+1.6 Systemd & Cron
 **Systemctl**
 ```bash
 sudo systemctl start nginx
@@ -99,7 +124,7 @@ crontab -e
 0 2 * * * /scripts/backup.sh
 ```
 
-### 1.7 Monitoring & Logs
+1.7 Monitoring & Logs
 | Command | Description |
 |----------|--------------|
 | `df -h` | Disk usage |
@@ -108,7 +133,7 @@ crontab -e
 | `uptime` | System load |
 | `tail -f /var/log/syslog` | Live log monitoring |
 
-### 1.8 Shell Scripting Basics
+1.8 Shell Scripting Basics
 ```bash
 #!/bin/bash
 for host in server1 server2 server3
@@ -120,7 +145,7 @@ done
 
 ---
 
-## ⚡ 2. Linux Cheatsheet for Daily DevOps
+⚡ 2. Linux Cheatsheet for Daily DevOps
 
 | Task | Command |
 |------|----------|
@@ -137,9 +162,9 @@ done
 
 ---
 
-## 🐳 3. Docker & Kubernetes CLI + Linux Troubleshooting
+🐳 3. Docker & Kubernetes CLI + Linux Troubleshooting
 
-### 3.1 Docker Basics
+3.1 Docker Basics
 ```bash
 docker ps -a
 docker images
@@ -155,7 +180,7 @@ docker system prune -a
 docker volume prune
 ```
 
-### 3.2 Kubernetes CLI
+3.2 Kubernetes CLI
 ```bash
 kubectl get pods -A
 kubectl describe pod mypod
@@ -165,7 +190,7 @@ kubectl apply -f deployment.yaml
 kubectl get nodes -o wide
 ```
 
-### 3.3 Linux + Container Troubleshooting
+3.3 Linux + Container Troubleshooting
 | Issue | Command |
 |--------|----------|
 | Check system logs | `dmesg | tail` |
@@ -176,7 +201,7 @@ kubectl get nodes -o wide
 
 ---
 
-## 🧰 Useful Tools
+🧰 Useful Tools
 - `htop` → interactive process viewer  
 - `ncdu` → disk usage analyzer  
 - `nmap` → network scanner  
@@ -185,9 +210,11 @@ kubectl get nodes -o wide
 
 ---
 
-## ✅ Summary
+✅ Summary
 A DevOps Engineer must:
 1. Master Linux fundamentals (permissions, processes, systemd, networking)  
 2. Automate tasks with shell scripts  
 3. Manage services & logs  
 4. Troubleshoot containers and Kubernetes nodes from Linux level  
+
+````
