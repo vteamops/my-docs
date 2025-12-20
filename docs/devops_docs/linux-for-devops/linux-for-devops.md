@@ -1,6 +1,5 @@
 # 🐧 Linux for DevOps Engineers
 
-````markdown
 Contents
 1 Linux Fundamentals for DevOps
   1.1 File System & Navigation
@@ -217,4 +216,3 @@ A DevOps Engineer must:
 3. Manage services & logs  
 4. Troubleshoot containers and Kubernetes nodes from Linux level  
 
-````
