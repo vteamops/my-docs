@@ -1,6 +1,5 @@
 # 🐧 Linux for DevOps Engineers
 
-````markdown
 Contents
 1 Linux Fundamentals for DevOps
   1.1 File System & Navigation
@@ -73,8 +72,8 @@ Example:
 
 1.3 Process Management
 | Command | Description |
-|----------|--------------|
-| `ps aux | grep nginx` | View running processes |
+|---------|-------------|
+| `ps aux \| grep nginx` | View running processes |
 | `top` / `htop` | Monitor CPU/memory usage |
 | `kill -9 PID` | Force kill process |
 | `systemctl status nginx` | Check service status |
@@ -82,7 +81,7 @@ Example:
 
 1.4 Networking & SSH
 | Command | Description |
-|----------|--------------|
+|---------|-------------|
 | `ip a` / `ifconfig` | Show IP interfaces |
 | `ping google.com` | Check connectivity |
 | `netstat -tulnp` | Show listening ports |
@@ -90,7 +89,8 @@ Example:
 | `scp file.txt user@host:/path` | Copy file over SSH |
 | `ssh user@host` | Connect to remote host |
 
-**Firewall**
+#### Firewall Configuration
+
 ```bash
 sudo ufw status
 sudo ufw allow 22/tcp
@@ -103,7 +103,9 @@ sudo ufw enable
 sudo apt update && sudo apt upgrade -y
 sudo apt install nginx
 ```
-**RHEL/CentOS**
+
+#### RHEL/CentOS
+
 ```bash
 sudo yum install httpd
 sudo dnf upgrade
@@ -117,7 +119,8 @@ sudo systemctl enable nginx
 sudo systemctl status nginx
 ```
 
-**Crontab**
+#### Crontab
+
 ```bash
 crontab -e
 # Example: backup every day at 2 AM
@@ -126,7 +129,7 @@ crontab -e
 
 1.7 Monitoring & Logs
 | Command | Description |
-|----------|--------------|
+|---------|-------------|
 | `df -h` | Disk usage |
 | `du -sh *` | Folder size |
 | `free -m` | Memory usage |
@@ -148,7 +151,7 @@ done
 ⚡ 2. Linux Cheatsheet for Daily DevOps
 
 | Task | Command |
-|------|----------|
+|------|---------|
 | Search logs | `grep -i error /var/log/syslog` |
 | Check open ports | `ss -tuln` |
 | Test network | `curl -I https://example.com` |
@@ -174,7 +177,8 @@ docker build -t myapp .
 docker run -d -p 8080:80 myapp
 ```
 
-**Cleanup**
+#### Cleanup
+
 ```bash
 docker system prune -a
 docker volume prune
@@ -192,8 +196,8 @@ kubectl get nodes -o wide
 
 3.3 Linux + Container Troubleshooting
 | Issue | Command |
-|--------|----------|
-| Check system logs | `dmesg | tail` |
+|-------|---------|
+| Check system logs | `dmesg \| tail` |
 | Disk full | `df -h && du -sh /var/lib/docker/*` |
 | Network blocked | `iptables -L -n -v` |
 | Service crash | `systemctl status docker` |
@@ -216,5 +220,3 @@ A DevOps Engineer must:
 2. Automate tasks with shell scripts  
 3. Manage services & logs  
 4. Troubleshoot containers and Kubernetes nodes from Linux level  
-
-````
