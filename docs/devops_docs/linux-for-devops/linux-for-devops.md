@@ -73,7 +73,7 @@
 ### Process Management
 
 | Command | Description |
-|---------|-------------|
+|-------------------------------|----------------------------------|
 | `ps aux \| grep nginx` | View running processes |
 | `top` / `htop` | Monitor CPU/memory usage |
 | `kill -9 PID` | Force kill process |
@@ -83,7 +83,7 @@
 ### Networking & SSH
 
 | Command | Description |
-|---------|-------------|
+|--------------------------------------|----------------------------------|
 | `ip a` / `ifconfig` | Show IP interfaces |
 | `ping google.com` | Check connectivity |
 | `netstat -tulnp` | Show listening ports |
@@ -136,7 +136,7 @@ crontab -e
 ### Monitoring & Logs
 
 | Command | Description |
-|---------|-------------|
+|------------------------------|----------------------------------|
 | `df -h` | Disk usage |
 | `du -sh *` | Folder size |
 | `free -m` | Memory usage |
@@ -207,7 +207,7 @@ kubectl get nodes -o wide
 ### Linux + Container Troubleshooting
 
 | Issue | Command |
-|-------|---------|
+|--------------------------|---------------------------------------------|
 | Check system logs | `dmesg \| tail` |
 | Disk full | `df -h && du -sh /var/lib/docker/*` |
 | Network blocked | `iptables -L -n -v` |
