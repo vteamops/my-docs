@@ -1,77 +1,76 @@
 # 🐧 Linux for DevOps Engineers
 
-## Table of Contents
+Contents
+1 Linux Fundamentals for DevOps
+  1.1 File System & Navigation
+  1.2 File Permissions & Ownership
+  1.3 Process Management
+  1.4 Networking & SSH
+  1.5 Package Management
+  1.6 Systemd & Cron
+  1.7 Monitoring & Logs
+  1.8 Shell Scripting Basics
 
-1. [Linux Fundamentals for DevOps](#linux-fundamentals-for-devops)
-   - [File System & Navigation](#file-system--navigation)
-   - [File Permissions & Ownership](#file-permissions--ownership)
-   - [Process Management](#process-management)
-   - [Networking & SSH](#networking--ssh)
-   - [Package Management](#package-management)
-   - [Systemd & Cron](#systemd--cron)
-   - [Monitoring & Logs](#monitoring--logs)
-   - [Shell Scripting Basics](#shell-scripting-basics)
+2 Linux Cheatsheet for Daily DevOps
 
-2. [Linux Cheatsheet for Daily DevOps](#linux-cheatsheet-for-daily-devops)
+3 Docker & Kubernetes CLI + Linux Troubleshooting
+  3.1 Docker Basics
+  3.2 Kubernetes CLI
+  3.3 Linux + Container Troubleshooting
 
-3. [Docker & Kubernetes CLI + Linux Troubleshooting](#docker--kubernetes-cli--linux-troubleshooting)
-   - [Docker Basics](#docker-basics)
-   - [Kubernetes CLI](#kubernetes-cli)
-   - [Linux + Container Troubleshooting](#linux--container-troubleshooting)
+Useful Tools
 
-4. [Useful Tools](#useful-tools)
+Summary
 
----
+🐧 Linux for DevOps Engineers
 
-## Linux Fundamentals for DevOps
+📘 1. Linux Fundamentals for DevOps
 
-### File System & Navigation
+1.1 File System & Navigation
 
-| Command | Description |
-|---------|-------------|
-| `pwd` | Print working directory: shows your current folder |
-| `ls -lAh` | List files/folders with details, human-readable sizes |
-| `cd /path` | Change directory to specified path |
-| `mkdir /tmp/test` | Create a directory at `/tmp/test` |
-| `rm -rf /tmp/test` | Recursively remove directory `/tmp/test` |
-| `rmdir /tmp/test` | Remove an empty directory only |
-| `rm file.txt` | Remove a file named `file.txt` |
-| `cp src dst` | Copy files or directories (`-r` for recursive) |
-| `mv src dst` | Move or rename files or directories |
-| `find /path -name file.txt` | Search for files/directories by name |
-| `tree /path` | Display directory structure visually |
-| `ln -s target linkname` | Create symbolic links to files or directories |
+| Command                      | Description                                            |
+|------------------------------|------------------------------------------------------|
+| `pwd`                        | Print working directory: shows your current folder     |
+| `ls -lAh`                    | List files/folders with details, human-readable sizes  |
+| `cd /path`                   | Change directory to specified path                     |
+| `mkdir /tmp/test`            | Create a directory at `/tmp/test`                      |
+| `rm -rf /tmp/test`           | Recursively remove directory `/tmp/test`               |
+| `rmdir /tmp/test`            | Remove an empty directory only                         |
+| `rm file.txt`                | Remove a file named `file.txt`                         |
+| `cp src dst`                 | Copy files or directories (`-r` for recursive)         |
+| `mv src dst`                 | Move or rename files or directories                    |
+| `find /path -name file.txt`  | Search for files/directories by name                   |
+| `tree /path`                 | Display directory structure visually                   |
+| `ln -s target linkname`      | Create symbolic links to files or directories          |
 
-#### Important Directories
 
-- `/etc` → System config files
-- `/var/log` → Logs
-- `/home` → User home directories
-- `/opt` → Optional software
-- `/tmp` → Temporary files
-- `/usr/bin` → User binaries
+**Important Directories**
+- `/etc` → System config files  
+- `/var/log` → Logs  
+- `/home` → User home directories  
+- `/opt` → Optional software  
+- `/tmp` → Temporary files  
+- `/usr/bin` → User binaries  
 
-### File Permissions & Ownership
+1.2 File Permissions & Ownership
 
-| Command | Description |
-|---------|-------------|
-| `useradd` / `userdel` | Add/delete user accounts |
-| `passwd` | Change user passwords |
-| `groupadd` / `groupdel` | Add/delete user groups |
-| `id` | Display user and group information |
-| `chmod` | Change file or directory permissions |
-| `chown` | Change file or directory ownership |
-| `chgrp` | Change group ownership of files or directories |
-| `sudo` | Execute commands with superuser privileges |
+| Command                  | Description                                        |
+|--------------------------|---------------------------------------------------|
+| `useradd` / `userdel`    | Add/delete user accounts                          |
+| `passwd`                 | Change user passwords                             |
+| `groupadd` / `groupdel`  | Add/delete user groups                            |
+| `id`                     | Display user and group information                |
+| `chmod`                  | Change file or directory permissions              |
+| `chown`                  | Change file or directory ownership                |
+| `chgrp`                  | Change group ownership of files or directories    |
+| `sudo`                   | Execute commands with superuser privileges        |
 
-#### Example Permission Format
-
-```
+Example:
+```bash
 -rwxr-xr--  1 devops dev  1234 Nov 9  script.sh
 ```
 
-### Process Management
-
+1.3 Process Management
 | Command | Description |
 |---------|-------------|
 | `ps aux \| grep nginx` | View running processes |
@@ -80,8 +79,7 @@
 | `systemctl status nginx` | Check service status |
 | `journalctl -u nginx` | View service logs |
 
-### Networking & SSH
-
+1.4 Networking & SSH
 | Command | Description |
 |---------|-------------|
 | `ip a` / `ifconfig` | Show IP interfaces |
@@ -99,10 +97,8 @@ sudo ufw allow 22/tcp
 sudo ufw enable
 ```
 
-### Package Management
-
-#### Debian/Ubuntu
-
+1.5 Package Management
+**Debian/Ubuntu**
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install nginx
@@ -115,10 +111,8 @@ sudo yum install httpd
 sudo dnf upgrade
 ```
 
-### Systemd & Cron
-
-#### Systemctl
-
+1.6 Systemd & Cron
+**Systemctl**
 ```bash
 sudo systemctl start nginx
 sudo systemctl enable nginx
@@ -133,8 +127,7 @@ crontab -e
 0 2 * * * /scripts/backup.sh
 ```
 
-### Monitoring & Logs
-
+1.7 Monitoring & Logs
 | Command | Description |
 |---------|-------------|
 | `df -h` | Disk usage |
@@ -143,8 +136,7 @@ crontab -e
 | `uptime` | System load |
 | `tail -f /var/log/syslog` | Live log monitoring |
 
-### Shell Scripting Basics
-
+1.8 Shell Scripting Basics
 ```bash
 #!/bin/bash
 for host in server1 server2 server3
@@ -156,7 +148,7 @@ done
 
 ---
 
-## Linux Cheatsheet for Daily DevOps
+⚡ 2. Linux Cheatsheet for Daily DevOps
 
 | Task | Command |
 |------|---------|
@@ -173,10 +165,9 @@ done
 
 ---
 
-## Docker & Kubernetes CLI + Linux Troubleshooting
+🐳 3. Docker & Kubernetes CLI + Linux Troubleshooting
 
-### Docker Basics
-
+3.1 Docker Basics
 ```bash
 docker ps -a
 docker images
@@ -193,8 +184,7 @@ docker system prune -a
 docker volume prune
 ```
 
-### Kubernetes CLI
-
+3.2 Kubernetes CLI
 ```bash
 kubectl get pods -A
 kubectl describe pod mypod
@@ -204,8 +194,7 @@ kubectl apply -f deployment.yaml
 kubectl get nodes -o wide
 ```
 
-### Linux + Container Troubleshooting
-
+3.3 Linux + Container Troubleshooting
 | Issue | Command |
 |-------|---------|
 | Check system logs | `dmesg \| tail` |
@@ -216,22 +205,18 @@ kubectl get nodes -o wide
 
 ---
 
-## Useful Tools
-
-- **htop** → Interactive process viewer
-- **ncdu** → Disk usage analyzer
-- **nmap** → Network scanner
-- **jq** → JSON parser for CLI
-- **tmux** → Terminal multiplexer
+🧰 Useful Tools
+- `htop` → interactive process viewer  
+- `ncdu` → disk usage analyzer  
+- `nmap` → network scanner  
+- `jq` → JSON parser for CLI  
+- `tmux` → terminal multiplexer  
 
 ---
 
-## Summary
-
+✅ Summary
 A DevOps Engineer must:
-
-1. **Master Linux fundamentals** - permissions, processes, systemd, networking
-2. **Automate tasks** - with shell scripts
-3. **Manage services & logs** - system monitoring and troubleshooting
-4. **Troubleshoot containers and Kubernetes nodes** - from the Linux level  
-
+1. Master Linux fundamentals (permissions, processes, systemd, networking)  
+2. Automate tasks with shell scripts  
+3. Manage services & logs  
+4. Troubleshoot containers and Kubernetes nodes from Linux level  
