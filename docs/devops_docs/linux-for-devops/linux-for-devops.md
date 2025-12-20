@@ -216,19 +216,22 @@ kubectl get nodes -o wide
 
 ---
 
-🧰 Useful Tools
-- `htop` → interactive process viewer  
-- `ncdu` → disk usage analyzer  
-- `nmap` → network scanner  
-- `jq` → JSON parser for CLI  
-- `tmux` → terminal multiplexer  
+## Useful Tools
+
+- **htop** → Interactive process viewer
+- **ncdu** → Disk usage analyzer
+- **nmap** → Network scanner
+- **jq** → JSON parser for CLI
+- **tmux** → Terminal multiplexer
 
 ---
 
-✅ Summary
+## Summary
+
 A DevOps Engineer must:
-1. Master Linux fundamentals (permissions, processes, systemd, networking)  
-2. Automate tasks with shell scripts  
-3. Manage services & logs  
-4. Troubleshoot containers and Kubernetes nodes from Linux level  
+
+1. **Master Linux fundamentals** - permissions, processes, systemd, networking
+2. **Automate tasks** - with shell scripts
+3. **Manage services & logs** - system monitoring and troubleshooting
+4. **Troubleshoot containers and Kubernetes nodes** - from the Linux level  
 
